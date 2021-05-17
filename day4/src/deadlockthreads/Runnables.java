@@ -5,6 +5,7 @@ public class Runnables {
     final Person personOne = new Person(1L, "Bob");
     final Person personTwo = new Person(2L, "Alice");
 
+    //should lock first person and get stuck when attempting to lock both persons
     Runnable threadOne = () -> {
         try {
             synchronized (personOne) {
@@ -19,6 +20,7 @@ public class Runnables {
         }
     };
 
+    //should hold second person and get stuck when attempting to lock both persons
     Runnable threadTwo = () -> {
         try {
             synchronized (personTwo) {

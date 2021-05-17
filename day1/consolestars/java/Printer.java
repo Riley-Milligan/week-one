@@ -24,6 +24,7 @@ public class Printer {
     }
 
     //empties stars
+    //called after filling to prepare for next fill
     private void reset() {
         for (i = 0; i < stars.length; i++) {
             addSpace(i);
@@ -42,6 +43,7 @@ public class Printer {
 
         System.out.println("1)");
 
+        //partially fills array with stars, starting from the left, then prints
         for (i = 0; i < 4; i++) {
             addStar(i);
             printStars();
@@ -49,6 +51,7 @@ public class Printer {
 
         reset();
 
+        //fills with 0 dots
         for (x = 0; x < 9; x++) {
             addDot(x);
         }
@@ -64,6 +67,7 @@ public class Printer {
 
         System.out.println("2)");
 
+        //fills with dots
         for (x = 0; x < 10; x++) {
             addDot(x);
         }
@@ -72,6 +76,7 @@ public class Printer {
 
         reset();
 
+        //fills with stars, then removes them starting from the left
         for (i = 0; i < 4; i++) {
             addStar(i);
         }
@@ -94,6 +99,7 @@ public class Printer {
         i = 5;
         x = 5;
 
+        //fills array with stars starting from the center moving outwards
         while (i < 9 && x > 1) {
             addStar(x);
             addStar(i);
@@ -104,6 +110,7 @@ public class Printer {
 
         reset();
 
+        //fills with dots
         for (x = 0; x < 11; x++) {
             addDot(x);
         }
@@ -120,6 +127,7 @@ public class Printer {
 
         System.out.println("4)");
 
+        //fills with dots
         for (x = 0; x < stars.length; x++) {
             addDot(x);
         }
@@ -128,6 +136,7 @@ public class Printer {
 
         reset();
 
+        //fills center of array with dots, starting from center-left
         for (i = 2; i < 9; i++) {
             addStar(i);
         }
@@ -137,6 +146,7 @@ public class Printer {
         i = 2;
         x = 8;
 
+        //removes stars from array, starting from the outside and working inwards
         while (i != x) {
             addSpace(i);
             addSpace(x);

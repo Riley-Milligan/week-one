@@ -11,6 +11,5 @@ public class ShapesApp {
         circle1.display();
         square1.display();
         triangle1.display();
-
     }
 }

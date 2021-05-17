@@ -13,10 +13,12 @@ public class AssignmentFourTest {
     @Test
     public void canRemoveX() {
 
-        List<String> list = Arrays.asList("xxax", "xbxbx", "xxcx");
-        List<String> expected = Arrays.asList("a", "bb", "c");
-        List<String> actual = RemoveX.removeX(list);
+        List<String> listOne = Arrays.asList("ax", "bb", "cx");
+        List<String> listTwo = Arrays.asList("xxax", "xbxbx", "xxcx");
+        List<String> listThree = Arrays.asList("x");
 
-        assertEquals(expected, actual);
+        assertEquals(Arrays.asList("a", "bb", "c"), RemoveX.removeX(listOne));
+        assertEquals(Arrays.asList("a", "bb", "c"), RemoveX.removeX(listTwo));
+        assertEquals(Arrays.asList(""), RemoveX.removeX(listThree));
     }
 }

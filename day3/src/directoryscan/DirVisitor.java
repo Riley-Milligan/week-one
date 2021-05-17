@@ -11,12 +11,11 @@ public class DirVisitor extends SimpleFileVisitor<Path> {
 
     @Override
     public FileVisitResult visitFile(Path file, BasicFileAttributes attributes) {
+        //for each file visited, souts the path as a string
         Path path = Paths.get(file.toString());
         String absolutePath = path.toAbsolutePath().toString();
         System.out.println(absolutePath);
 
         return CONTINUE;
     }
-
-
 }

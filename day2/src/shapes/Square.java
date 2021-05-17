@@ -18,5 +18,4 @@ public class Square implements Shape {
     public void display() {
         System.out.println("The area of this square is " + calculateArea() + ".");
     }
-
 }

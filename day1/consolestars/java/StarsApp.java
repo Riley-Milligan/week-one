@@ -4,6 +4,7 @@ public class StarsApp {
 
         Printer printer = new Printer();
 
+        //prints the thing
         printer.firstPrint();
         printer.secondPrint();
         printer.thirdPrint();

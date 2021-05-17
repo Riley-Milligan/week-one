@@ -17,15 +17,12 @@ public class DirectoryScanApp {
         System.out.println("Which directory would you like to scan?");
         startDir = input.nextLine();
 
+        //takes the path string given by user and uses it to start walking the file tree at the given location
         try {
             Files.walkFileTree(Paths.get(startDir), dirVisitor);
 
         } catch (IOException e) {
             e.printStackTrace();
-
         }
-
-
     }
-
 }

@@ -8,7 +8,6 @@ import java.util.Scanner;
 
 public class FileScanApp {
 
-
     public static void main(String[] args) {
 
         String fileToScan;
@@ -24,6 +23,7 @@ public class FileScanApp {
         System.out.println("What character would you like to count?");
         charToSearch = input.next().charAt(0);
 
+        //uses resource buffered reader to go line by line through the file, and counts how many times the given character occurs in that file
         try (BufferedReader bufferedReader = new BufferedReader(new FileReader(fileToScan))) {
 
             while ((scanLine = bufferedReader.readLine()) != null) {
@@ -39,10 +39,7 @@ public class FileScanApp {
             e.printStackTrace();
         }
 
+        //and lets us know how many times that is
         System.out.println("The character " + charToSearch + " occurs " + characterCount + " times in " + fileToScan + ".");
-
-
     }
-
-
 }

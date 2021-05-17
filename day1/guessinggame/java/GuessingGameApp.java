@@ -13,12 +13,14 @@ public class GuessingGameApp {
 
         System.out.println("I have generated a number 1 to 100.  Please try to guess a number within 10 integers of this number.");
 
+        //simple game loop while user guesses
         do {
 
             System.out.println("You have " + (5 - guesses) + " left.  Please input your guess.");
 
             guess = input.nextInt();
 
+            //checks if correct, wrong, or just plain out there.
             if (guess > 100 && guesses < 4) {
                 System.out.println("I'm sorry, but your guess was outside of the range.  I'm still counting it as a guess though.");
             } else if (guesser.checkGuess(guess, numberToGuess)) {
@@ -34,7 +36,5 @@ public class GuessingGameApp {
             guesses++;
 
         } while (guesses < 5);
-
     }
-
 }

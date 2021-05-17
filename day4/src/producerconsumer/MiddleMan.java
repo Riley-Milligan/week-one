@@ -5,10 +5,12 @@ import java.util.LinkedList;
 //"Middleman" defines how the producer and consumer interact
 public class MiddleMan {
 
+    //the "middleman" buffer
     public LinkedList<Integer> buffer = new LinkedList<>();
     Integer boundary = 5;
     String exit = "";
 
+    //just a simple method to stop the consumer and producer when called
     public void endInteraction() {
         this.exit = "exit";
     }

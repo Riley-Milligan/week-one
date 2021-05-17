@@ -8,12 +8,14 @@ public class ProducerConsumerApp {
 
         Scanner input = new Scanner(System.in);
 
+        //when empty, threads will keep running.  Calls the method to stop the produce and consume loops when not empty
         String exit = "";
 
         System.out.println("Starting producer/consumer interaction.  Input anything to stop.");
 
-        main.producerconsumer.MiddleMan middleMan = new main.producerconsumer.MiddleMan();
+        MiddleMan middleMan = new main.producerconsumer.MiddleMan();
 
+        //creates producer from produce method in middleman
         Runnable producer = () -> {
             try {
                 middleMan.produce();
@@ -22,6 +24,7 @@ public class ProducerConsumerApp {
             }
         };
 
+        //creates consumer from consume method in middleman
         Runnable consumer = () -> {
             try {
                 middleMan.consume();
@@ -30,9 +33,11 @@ public class ProducerConsumerApp {
             }
         };
 
+        //places each in a thread and starts those threads
         new Thread(producer).start();
         new Thread(consumer).start();
 
+        //when user provides console input, calls method to end middleman loops
         exit = input.next();
 
         if (!exit.isEmpty()) {

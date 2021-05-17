@@ -1,5 +1,6 @@
 package main.deadlockthreads;
 
+//pojo so my threads have something to fight over
 public class Person {
 
     Long UID;

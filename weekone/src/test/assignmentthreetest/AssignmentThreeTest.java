@@ -6,15 +6,20 @@ import org.junit.jupiter.api.Test;
 import java.util.Arrays;
 import java.util.List;
 
+import static org.junit.jupiter.api.Assertions.assertEquals;
+
 public class AssignmentThreeTest {
 
     @Test
     public void canDoubleDigits() {
 
-        List<Integer> list = Arrays.asList(2, 4, 6, 9);
-        List<Integer> expected = Arrays.asList(4, 8, 12, 16);
-        List<Integer> actual = DoubleDigits.doubleDigits(list);
+        List<Integer> listOne = Arrays.asList(1, 2, 3);
+        List<Integer> listTwo = Arrays.asList(6, 8, 6, 8, -1);
+        List<Integer> listThree = Arrays.asList();
 
+        assertEquals(Arrays.asList(2, 4, 6), DoubleDigits.doubleDigits(listOne));
+        assertEquals(Arrays.asList(12, 16, 12, 16, -2), DoubleDigits.doubleDigits(listTwo));
+        assertEquals(Arrays.asList(), DoubleDigits.doubleDigits(listThree));
     }
 
 }

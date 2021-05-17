@@ -22,6 +22,7 @@ public class FileAppend {
         System.out.println("What would you like to write on the end of this file?");
         textToAppend = input.nextLine() + "\n";
 
+        //takes given file from provided path and tries to add the line given by user to the end followed by a line break;
         try {
             Files.write(Paths.get(fileToEdit), textToAppend.getBytes(), StandardOpenOption.APPEND);
         } catch (IOException e) {

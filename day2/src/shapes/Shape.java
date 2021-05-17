@@ -2,8 +2,7 @@ package shapes;
 
 public interface Shape {
 
-    public int calculateArea();
+    int calculateArea();
 
-    public void display();
-
+    void display();
 }
